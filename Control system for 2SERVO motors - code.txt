@@ -1,0 +1,25 @@
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+//position of the servo in degree
+int serPos=0;
+
+void setup(){
+servo1.attach(3);
+servo2.attach(5);
+}
+
+void loop(){
+  for(serPos=0 ; serPos<180 ; serPos++){
+    servo1.write(serPos);
+    servo2.write(serPos);
+    delay(10);
+  }
+  
+  for(serPos=180 ; serPos>0 ; serPos--){
+    servo1.write(serPos);
+    servo2.write(serPos);
+    delay(10);
+}
+}
